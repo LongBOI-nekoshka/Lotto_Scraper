@@ -1,8 +1,9 @@
 const LottoController = require('../Controller/LottoController');
 
 const api = (app) => {
-    app.get('/test',() => {
-        console.log('yes');
+    app.get('/test',async  (req,res) =>  {
+        await LottoController.scrape()
+        res.send().status(200);
     })
 };
 
